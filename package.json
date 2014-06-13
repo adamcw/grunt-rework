@@ -31,7 +31,8 @@
   "dependencies": {
     "rework": "~0.18.3",
     "grunt-contrib-clean": "~0.4.1",
-    "grunt-contrib-jshint": "~0.1.1-rc5"
+    "grunt-contrib-jshint": "~0.1.1-rc5",
+    "chalk": "~0.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",

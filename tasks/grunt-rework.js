@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 
   var _ = grunt.util._;
   var rework = require('rework');
+  var chalk = require('chalk');
 
   grunt.registerMultiTask('rework', 'rework your css files', function() {
     var options = this.options();
@@ -58,11 +59,12 @@ module.exports = function(grunt) {
         var res = css.toString(options.toString);
 
         var dest = _.isFunction(options.processName) ?
-          options.processName(srcFile, res) : file.dest;
+          options.processName(srcFile, file.dest, res) : file.dest;
         grunt.file.write(dest, res);
-        grunt.log.writeln('File "' + dest + '" created.');
+        grunt.log.writeln('File "' + chalk.cyan(dest) + '" created.');
         nextF();
       }, next);
     }, done);
   });
 };
+
